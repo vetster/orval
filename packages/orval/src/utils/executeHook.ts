@@ -7,7 +7,7 @@ import {
   log,
   logError,
   NormalizedHookCommand,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import chalk from 'chalk';
 import execa from 'execa';
 import { parseArgsStringToArgv } from 'string-argv';

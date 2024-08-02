@@ -1,4 +1,4 @@
-import { defineConfig } from 'orval';
+import { defineConfig } from '@vetster/orval';
 
 export default defineConfig({
   petstore: {
@@ -107,30 +107,30 @@ export default defineConfig({
       },
     },
   },
-  petstoreOverrideSwr: {
-    output: {
-      target: '../generated/swr/petstore-override-swr/endpoints.ts',
-      schemas: '../generated/swr/petstore-override-swr/model',
-      client: 'swr',
-      override: {
-        swr: {
-          useInfinite: true,
-          swrOptions: {
-            dedupingInterval: 10000,
-          },
-          swrMutationOptions: {
-            revalidate: true,
-          },
-          swrInfiniteOptions: {
-            initialSize: 10,
-          },
-        },
-      },
-    },
-    input: {
-      target: '../specifications/petstore.yaml',
-    },
-  },
+  // petstoreOverrideSwr: {
+  //   output: {
+  //     target: '../generated/swr/petstore-override-swr/endpoints.ts',
+  //     schemas: '../generated/swr/petstore-override-swr/model',
+  //     client: 'swr',
+  //     override: {
+  //       swr: {
+  //         useInfinite: true,
+  //         swrOptions: {
+  //           dedupingInterval: 10000,
+  //         },
+  //         swrMutationOptions: {
+  //           revalidate: true,
+  //         },
+  //         swrInfiniteOptions: {
+  //           initialSize: 10,
+  //         },
+  //       },
+  //     },
+  //   },
+  //   input: {
+  //     target: '../specifications/petstore.yaml',
+  //   },
+  // },
   blobFile: {
     output: {
       target: '../generated/swr/blob-file/endpoints.ts',

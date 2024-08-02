@@ -1,4 +1,4 @@
-import { PackageJson } from '@orval/core';
+import { PackageJson } from '@vetster/orval-core';
 import findUp from 'find-up';
 import fs from 'fs-extra';
 import { normalizePath } from './options';

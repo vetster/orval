@@ -17,7 +17,7 @@
     "typescript": "^4.2.4"
   },
   "devDependencies": {
-    "orval": "link:../../../packages/orval/dist",
+    "@vetster/orval": "link:../../../packages/orval/dist",
     "prettier": "^3.0.3"
   },
   "scripts": {

@@ -1,4 +1,4 @@
-import { defineConfig } from 'orval';
+import { defineConfig } from '@vetster/orval';
 import transformer from '../transformers/add-version.js';
 
 export default defineConfig({

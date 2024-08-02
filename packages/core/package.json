@@ -1,12 +1,16 @@
 {
-  "name": "@orval/core",
-  "version": "6.28.2",
+  "name": "@vetster/orval-core",
+  "version": "7.1.0-alpha.1",
   "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vetster/orval.git"
+  },
   "scripts": {
     "build": "tsup ./src/index.ts --clean --sourcemap --dts",
     "dev": "tsup ./src/index.ts --clean --sourcemap --watch src --dts",

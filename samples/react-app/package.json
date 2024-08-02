@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "msw": "^2.0.2",
-    "orval": "link:../../packages/orval/dist",
+    "@vetster/orval": "link:../../packages/orval/dist",
     "prettier": "^3.0.3"
   },
   "msw": {

@@ -4,7 +4,7 @@ import {
   logError,
   Options,
   OptionsExport,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import { generateConfig, generateSpec } from './generate';
 import { defineConfig, normalizeOptions } from './utils/options';
 import { startWatcher } from './utils/watcher';

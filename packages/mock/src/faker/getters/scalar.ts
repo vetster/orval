@@ -6,7 +6,7 @@ import {
   isRootKey,
   mergeDeep,
   MockOptions,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import {
   getNullable,
   resolveMockOverride,

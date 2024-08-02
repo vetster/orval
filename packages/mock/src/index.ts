@@ -3,7 +3,7 @@ import {
   GeneratorOptions,
   GeneratorVerbOptions,
   GlobalMockOptions,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import { generateMSW, generateMSWImports } from './msw';
 
 export const DEFAULT_MOCK_OPTIONS: GlobalMockOptions = {

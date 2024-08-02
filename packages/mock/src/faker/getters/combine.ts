@@ -3,7 +3,7 @@ import {
   GeneratorImport,
   isReference,
   MockOptions,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import omit from 'lodash.omit';
 import { resolveMockValue } from '../resolvers';
 import { MockSchemaObject } from '../../types';

@@ -4,7 +4,7 @@ import {
   getRefInfo,
   isReference,
   MockOptions,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import get from 'lodash.get';
 import { SchemaObject } from 'openapi3-ts/oas30';
 import { getMockScalar } from '../getters/scalar';

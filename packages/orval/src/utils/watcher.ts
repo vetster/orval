@@ -1,4 +1,4 @@
-import { log, logError } from '@orval/core';
+import { log, logError } from '@vetster/orval-core';
 
 export const startWatcher = async (
   watchOptions: boolean | string | (string | boolean)[],
