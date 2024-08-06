@@ -1,7 +1,7 @@
 {
   "name": "@vetster/orval",
   "description": "A swagger client generator for typescript",
-  "version": "6.32.0-alpha.1",
+  "version": "6.32.0-alpha.2",
   "license": "MIT",
   "files": [
     "dist"
@@ -51,15 +51,15 @@
   },
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",
-    "@vetster/orval-angular": "6.32.0-alpha.1",
-    "@vetster/orval-axios": "6.32.0-alpha.1",
-    "@vetster/orval-core": "6.32.0-alpha.1",
-    "@vetster/orval-fetch": "6.32.0-alpha.1",
-    "@vetster/orval-hono": "6.32.0-alpha.1",
-    "@vetster/orval-mock": "6.32.0-alpha.1",
-    "@vetster/orval-query": "6.32.0-alpha.1",
-    "@vetster/orval-swr": "6.32.0-alpha.1",
-    "@vetster/orval-zod": "6.32.0-alpha.1",
+    "@vetster/orval-angular": "6.32.0-alpha.2",
+    "@vetster/orval-axios": "6.32.0-alpha.2",
+    "@vetster/orval-core": "6.32.0-alpha.2",
+    "@vetster/orval-fetch": "6.32.0-alpha.2",
+    "@vetster/orval-hono": "6.32.0-alpha.2",
+    "@vetster/orval-mock": "6.32.0-alpha.2",
+    "@vetster/orval-query": "6.32.0-alpha.2",
+    "@vetster/orval-swr": "6.32.0-alpha.2",
+    "@vetster/orval-zod": "6.32.0-alpha.2",
     "ajv": "^8.12.0",
     "cac": "^6.7.14",
     "chalk": "^4.1.2",

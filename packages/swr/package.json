@@ -1,6 +1,6 @@
 {
   "name": "@vetster/orval-swr",
-  "version": "6.32.0-alpha.1",
+  "version": "6.32.0-alpha.2",
   "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -17,6 +17,6 @@
     "lint": "eslint src/**/*.ts"
   },
   "dependencies": {
-    "@vetster/orval-core": "6.32.0-alpha.1"
+    "@vetster/orval-core": "6.32.0-alpha.2"
   }
 }
