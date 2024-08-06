@@ -50,6 +50,7 @@ export const normalizeQueryOptions = (
     ...(queryOptions.shouldExportMutatorHooks
       ? { shouldExportMutatorHooks: true }
       : {}),
+    ...(queryOptions.shouldExportHooks ? { shouldExportHooks: true } : {}),
     ...(queryOptions.signal ? { signal: true } : {}),
   };
 };

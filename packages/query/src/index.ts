@@ -523,7 +523,6 @@ const QueryType = {
   QUERY: 'query' as QueryType,
   SUSPENSE_QUERY: 'suspenseQuery' as QueryType,
   SUSPENSE_INFINITE: 'suspenseInfiniteQuery' as QueryType,
-  PREFETCH: 'prefetch' as QueryType,
 };
 
 const INFINITE_QUERY_PROPERTIES = ['getNextPageParam', 'getPreviousPageParam'];
@@ -1104,6 +1103,11 @@ ${hookOptions}
   const operationPrefix = hasSvelteQueryV4 ? 'create' : 'use';
 
   const hook = `
+export type ${pascal(
+    name,
+  )}QueryResult = NonNullable<Awaited<ReturnType<${dataType}>>>
+export type ${pascal(name)}QueryError = ${errorType}
+
   ${doc}export const ${camel(
     `${operationPrefix}-${name}${customOptions?.queryHookSuffix ? `-${customOptions.queryHookSuffix}` : ''}`,
   )} = <TData = ${TData}, TError = ${errorType}>(\n ${queryProps} ${queryArguments}\n  ): ${returnType} => {
@@ -1126,11 +1130,6 @@ ${hookOptions}
 
   return `
 ${queryOptionsFn}
-
-export type ${pascal(
-    name,
-  )}QueryResult = NonNullable<Awaited<ReturnType<${dataType}>>>
-export type ${pascal(name)}QueryError = ${errorType}
 
 ${shouldExportHooks ? hook : ''}
 
@@ -1290,16 +1289,6 @@ const generateQueryHook = async (
               options: query?.options,
               customOptions: query?.customOptions,
               type: QueryType.QUERY,
-            },
-          ]
-        : []),
-      ...(query?.usePrefetch || operationQueryOptions?.usePrefetch
-        ? [
-            {
-              name: operationName,
-              options: query?.options,
-              customOptions: query?.customOptions,
-              type: QueryType.PREFETCH,
               shouldExportHooks: query?.shouldExportHooks,
             },
           ]

@@ -513,6 +513,9 @@ const normalizeQueryOptions = (
     ...(!isUndefined(queryOptions.shouldExportMutatorHooks)
       ? { shouldExportMutatorHooks: queryOptions.shouldExportMutatorHooks }
       : {}),
+    ...(!isUndefined(queryOptions.shouldExportHooks)
+      ? { shouldExportHooks: queryOptions.shouldExportHooks }
+      : {}),
     ...(!isUndefined(queryOptions.signal)
       ? { signal: queryOptions.signal }
       : {}),
