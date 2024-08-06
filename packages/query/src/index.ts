@@ -523,6 +523,7 @@ const QueryType = {
   QUERY: 'query' as QueryType,
   SUSPENSE_QUERY: 'suspenseQuery' as QueryType,
   SUSPENSE_INFINITE: 'suspenseInfiniteQuery' as QueryType,
+  PREFETCH: 'prefetch' as QueryType,
 };
 
 const INFINITE_QUERY_PROPERTIES = ['getNextPageParam', 'getPreviousPageParam'];
@@ -855,7 +856,14 @@ const getQueryFnArguments = ({
 };
 
 const generateQueryImplementation = ({
-  queryOption: { name, queryParam, options, type, customOptions },
+  queryOption: {
+    name,
+    queryParam,
+    options,
+    type,
+    customOptions,
+    shouldExportHooks = true,
+  },
   operationName,
   queryKeyFnName,
   queryProperties,
@@ -884,6 +892,7 @@ const generateQueryImplementation = ({
     type: QueryType;
     queryParam?: string;
     customOptions?: CustomOptions;
+    shouldExportHooks?: boolean;
   };
   isRequestOptions: boolean;
   operationName: string;
@@ -1094,15 +1103,8 @@ ${hookOptions}
 
   const operationPrefix = hasSvelteQueryV4 ? 'create' : 'use';
 
-  return `
-${queryOptionsFn}
-
-export type ${pascal(
-    name,
-  )}QueryResult = NonNullable<Awaited<ReturnType<${dataType}>>>
-export type ${pascal(name)}QueryError = ${errorType}
-
-${doc}export const ${camel(
+  const hook = `
+  ${doc}export const ${camel(
     `${operationPrefix}-${name}${customOptions?.queryHookSuffix ? `-${customOptions.queryHookSuffix}` : ''}`,
   )} = <TData = ${TData}, TError = ${errorType}>(\n ${queryProps} ${queryArguments}\n  ): ${returnType} => {
 
@@ -1120,6 +1122,18 @@ ${doc}export const ${camel(
 
   return ${queryResultVarName};
 }\n
+  `;
+
+  return `
+${queryOptionsFn}
+
+export type ${pascal(
+    name,
+  )}QueryResult = NonNullable<Awaited<ReturnType<${dataType}>>>
+export type ${pascal(name)}QueryError = ${errorType}
+
+${shouldExportHooks ? hook : ''}
+
 ${
   usePrefetch && (type === QueryType.QUERY || type === QueryType.INFINITE)
     ? `${doc}export const ${camel(
@@ -1191,7 +1205,8 @@ const generateQueryHook = async (
     (override.query.useQuery ||
       override.query.useSuspenseQuery ||
       override.query.useInfinite ||
-      override.query.useSuspenseInfiniteQuery);
+      override.query.useSuspenseInfiniteQuery ||
+      override.query.usePrefetch);
   if (operationQueryOptions?.useInfinite !== undefined) {
     isQuery = operationQueryOptions.useInfinite;
   }
@@ -1200,6 +1215,9 @@ const generateQueryHook = async (
   }
   if (operationQueryOptions?.useQuery !== undefined) {
     isQuery = operationQueryOptions.useQuery;
+  }
+  if (operationQueryOptions?.usePrefetch !== undefined) {
+    isQuery = operationQueryOptions.usePrefetch;
   }
   if (operationQueryOptions?.useSuspenseQuery !== undefined) {
     isQuery = operationQueryOptions.useSuspenseQuery;
@@ -1272,6 +1290,17 @@ const generateQueryHook = async (
               options: query?.options,
               customOptions: query?.customOptions,
               type: QueryType.QUERY,
+            },
+          ]
+        : []),
+      ...(query?.usePrefetch || operationQueryOptions?.usePrefetch
+        ? [
+            {
+              name: operationName,
+              options: query?.options,
+              customOptions: query?.customOptions,
+              type: QueryType.PREFETCH,
+              shouldExportHooks: query?.shouldExportHooks,
             },
           ]
         : []),

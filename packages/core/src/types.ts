@@ -417,6 +417,7 @@ export type NormalizedQueryOptions = {
   queryKey?: NormalizedMutator;
   queryOptions?: NormalizedMutator;
   mutationOptions?: NormalizedMutator;
+  shouldExportHooks?: boolean;
   shouldExportMutatorHooks?: boolean;
   signal?: boolean;
   version?: 3 | 4 | 5;
