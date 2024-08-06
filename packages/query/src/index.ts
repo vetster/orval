@@ -36,6 +36,7 @@ import {
   getRouteAsArray,
   NormalizedOutputOptions,
   OutputHttpClient,
+  CustomOptions,
 } from '@vetster/orval-core';
 import omitBy from 'lodash.omitby';
 import {
@@ -855,7 +856,7 @@ const getQueryFnArguments = ({
 };
 
 const generateQueryImplementation = ({
-  queryOption: { name, queryParam, options, type },
+  queryOption: { name, queryParam, options, type, customOptions },
   operationName,
   queryKeyFnName,
   queryProperties,
@@ -883,6 +884,7 @@ const generateQueryImplementation = ({
     options?: object | boolean;
     type: QueryType;
     queryParam?: string;
+    customOptions?: CustomOptions;
   };
   isRequestOptions: boolean;
   operationName: string;
@@ -1073,7 +1075,9 @@ ${hookOptions}
           ? `const customOptions = ${
               queryOptionsMutator.name
             }({...queryOptions, queryKey, queryFn}${
-              queryOptionsMutator.hasSecondArg ? `, { ${queryProperties} }` : ''
+              queryOptionsMutator.hasSecondArg
+                ? `, { infinite: ${type === QueryType.INFINITE}, ${queryProperties} }`
+                : ''
             }${
               queryOptionsMutator.hasThirdArg ? `, { url: \`${route}\` }` : ''
             });`
@@ -1100,7 +1104,7 @@ export type ${pascal(
 export type ${pascal(name)}QueryError = ${errorType}
 
 ${doc}export const ${camel(
-    `${operationPrefix}-${name}`,
+    `${operationPrefix}-${name}${customOptions?.queryHookSuffix ? `-${customOptions.queryHookSuffix}` : ''}`,
   )} = <TData = ${TData}, TError = ${errorType}>(\n ${queryProps} ${queryArguments}\n  ): ${returnType} => {
 
   const ${queryOptionsVarName} = ${queryOptionsFnName}(${queryProperties}${
@@ -1256,6 +1260,7 @@ const generateQueryHook = async (
             {
               name: camel(`${operationName}-infinite`),
               options: query?.options,
+              customOptions: query?.customOptions,
               type: QueryType.INFINITE,
               queryParam: query?.useInfiniteQueryParam,
             },
@@ -1266,6 +1271,7 @@ const generateQueryHook = async (
             {
               name: operationName,
               options: query?.options,
+              customOptions: query?.customOptions,
               type: QueryType.QUERY,
             },
           ]
@@ -1275,6 +1281,7 @@ const generateQueryHook = async (
             {
               name: camel(`${operationName}-suspense`),
               options: query?.options,
+              customOptions: query?.customOptions,
               type: QueryType.SUSPENSE_QUERY,
             },
           ]
@@ -1285,6 +1292,7 @@ const generateQueryHook = async (
             {
               name: camel(`${operationName}-suspense-infinite`),
               options: query?.options,
+              customOptions: query?.customOptions,
               type: QueryType.SUSPENSE_INFINITE,
               queryParam: query?.useInfiniteQueryParam,
             },
@@ -1300,7 +1308,7 @@ const generateQueryHook = async (
 
     const routeString = isVue(outputClient)
       ? getRouteAsArray(route) // Note: this is required for reactivity to work, we will lose it if route params are converted into string, only as array they will be tracked // TODO: add tests for this
-      : `\`${route}\``;
+      : `\`${route}${query?.customOptions?.queryKeySuffix || ''}\``;
 
     // Note: do not unref() params in Vue - this will make key lose reactivity
     const queryKeyFn = `export const ${queryKeyFnName} = (${queryKeyProps}) => {

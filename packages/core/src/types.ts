@@ -406,12 +406,18 @@ export type NormalizedQueryOptions = {
   useInfiniteQueryParam?: string;
   usePrefetch?: boolean;
   options?: any;
+  customOptions?: CustomOptions;
   queryKey?: NormalizedMutator;
   queryOptions?: NormalizedMutator;
   mutationOptions?: NormalizedMutator;
   shouldExportMutatorHooks?: boolean;
   signal?: boolean;
   version?: 3 | 4 | 5;
+};
+
+export type CustomOptions = {
+  queryHookSuffix: string;
+  queryKeySuffix: string;
 };
 
 export type QueryOptions = {
@@ -423,6 +429,7 @@ export type QueryOptions = {
   useInfiniteQueryParam?: string;
   usePrefetch?: boolean;
   options?: any;
+  customOptions?: CustomOptions;
   queryKey?: Mutator;
   queryOptions?: Mutator;
   mutationOptions?: Mutator;

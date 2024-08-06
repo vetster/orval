@@ -486,6 +486,9 @@ const normalizeQueryOptions = (
       ? { useInfiniteQueryParam: queryOptions.useInfiniteQueryParam }
       : {}),
     ...(queryOptions.options ? { options: queryOptions.options } : {}),
+    ...(queryOptions.customOptions
+      ? { customOptions: queryOptions.customOptions }
+      : {}),
     ...(queryOptions?.queryKey
       ? {
           queryKey: normalizeMutator(outputWorkspace, queryOptions?.queryKey),
