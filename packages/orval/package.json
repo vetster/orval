@@ -54,7 +54,6 @@
     "@vetster/orval-angular": "6.32.0-alpha.2",
     "@vetster/orval-axios": "6.32.0-alpha.2",
     "@vetster/orval-core": "6.32.0-alpha.2",
-    "@vetster/orval-fetch": "6.32.0-alpha.2",
     "@vetster/orval-hono": "6.32.0-alpha.2",
     "@vetster/orval-mock": "6.32.0-alpha.2",
     "@vetster/orval-query": "6.32.0-alpha.2",
