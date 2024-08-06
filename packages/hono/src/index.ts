@@ -122,7 +122,27 @@ const getHonoHandlers = ({
 }) => {
   return `
 export const ${handlerName} = factory.createHandlers(
-${currentValidator}async (c: ${contextTypeName}) => {
+${
+  verbOption.headers
+    ? `zValidator('header', ${verbOption.operationName}Header),\n`
+    : ''
+}${
+    verbOption.params.length
+      ? `zValidator('param', ${verbOption.operationName}Params),\n`
+      : ''
+  }${
+    verbOption.queryParams
+      ? `zValidator('query', ${verbOption.operationName}QueryParams),\n`
+      : ''
+  }${
+    verbOption.body.definition
+      ? `zValidator('json', ${verbOption.operationName}Body),\n`
+      : ''
+  }${
+    !!verbOption.response.originalSchema?.['200']?.content?.['application/json']
+      ? `zValidator('response', ${verbOption.operationName}Response),\n`
+      : ''
+  }(c: ${contextTypeName}) => {
 
   },
 );`;
@@ -785,13 +805,6 @@ export const zValidator =
     } else {
       await next();
 
-      if (
-        c.res.status !== 200 ||
-       !c.res.headers.get('Content-Type')?.includes('application/json')
-      ) {
-        return;
-      }
-
       const clonedResponse = c.res.clone();
 
       let value: unknown;
@@ -800,8 +813,6 @@ export const zValidator =
       } catch {
         const message = 'Malformed JSON in response';
         c.res = new Response(message, { status: 400 });
-
-        return;
       }
 
       const result = await schema.safeParseAsync(value);
