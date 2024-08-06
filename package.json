@@ -1,7 +1,7 @@
 {
   "name": "@vetster/orval",
   "namespace": "@vetster/orval",
-  "version": "8.0.0-alpha.1",
+  "version": "6.32.0-alpha.1",
   "license": "MIT",
   "workspaces": [
     "packages/*"

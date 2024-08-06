@@ -26,8 +26,7 @@ import {
   VERBS_WITH_BODY,
   jsDoc,
   SwrOptions,
-<<<<<<< HEAD
-} from '@orval/core';
+} from '@vetster/orval-core';
 
 const AXIOS_DEPENDENCIES: GeneratorDependency[] = [
   {
@@ -45,20 +44,6 @@ const AXIOS_DEPENDENCIES: GeneratorDependency[] = [
     dependency: 'axios',
   },
 ];
-=======
-  OutputHttpClient,
-} from '@vetster/orval-core';
-import {
-  AXIOS_DEPENDENCIES,
-  generateSwrRequestFunction,
-  getSwrRequestOptions,
-  getSwrErrorType,
-  getSwrRequestSecondArg,
-  getHttpRequestSecondArg,
-  getSwrMutationFetcherOptionType,
-  getSwrMutationFetcherType,
-} from './client';
->>>>>>> 5b138613 (chore(NA): updated package to be a vetster package)
 
 const PARAMS_SERIALIZER_DEPENDENCIES: GeneratorDependency[] = [
   {

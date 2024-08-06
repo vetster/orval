@@ -35,7 +35,6 @@ import {
   compareVersions,
   getRouteAsArray,
   NormalizedOutputOptions,
-  OutputHttpClient,
   CustomOptions,
 } from '@vetster/orval-core';
 import omitBy from 'lodash.omitby';

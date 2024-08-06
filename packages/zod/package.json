@@ -1,6 +1,6 @@
 {
   "name": "@vetster/orval-zod",
-  "version": "7.1.0-alpha.1",
+  "version": "6.32.0-alpha.1",
   "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -18,7 +18,7 @@
     "test": "vitest --global test.ts"
   },
   "dependencies": {
-    "@vetster/orval-core": "7.1.0-alpha.1",
+    "@vetster/orval-core": "6.32.0-alpha.1",
     "lodash.uniq": "^4.5.0"
   },
   "devDependencies": {
