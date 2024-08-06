@@ -14,7 +14,10 @@ import { getRouteMSW, overrideVarName } from '../faker/getters';
 import { getMockDefinition, getMockOptionsDataOverride } from './mocks';
 import { getDelay } from '../delay';
 
-const getMSWDependencies = (locale?: string): GeneratorDependency[] => [
+const getMSWDependencies = (
+  locale?: string,
+  extraImportDependencies: GeneratorDependency[] = [],
+): GeneratorDependency[] => [
   {
     exports: [
       { name: 'http', values: true },
@@ -27,6 +30,7 @@ const getMSWDependencies = (locale?: string): GeneratorDependency[] => [
     exports: [{ name: 'faker', values: true }],
     dependency: locale ? `@faker-js/faker/locale/${locale}` : '@faker-js/faker',
   },
+  ...extraImportDependencies,
 ];
 
 export const generateMSWImports: GenerateMockImports = ({
@@ -39,7 +43,10 @@ export const generateMSWImports: GenerateMockImports = ({
 }) => {
   return generateDependencyImports(
     implementation,
-    [...getMSWDependencies(options?.locale), ...imports],
+    [
+      ...getMSWDependencies(options?.locale, options?.extraImportDependencies),
+      ...imports,
+    ],
     specsName,
     hasSchemaDir,
     isAllowSyntheticDefaultImports,

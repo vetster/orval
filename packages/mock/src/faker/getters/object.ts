@@ -120,7 +120,10 @@ export const getMockObject = ({
 
         const keyDefinition = getKey(key);
         if (!isRequired && !resolvedValue.overrided) {
-          return `${keyDefinition}: faker.helpers.arrayElement([${resolvedValue.value}, undefined])`;
+          // return `${keyDefinition}: faker.helpers.arrayElement([${resolvedValue.value}, undefined])`;
+          // By default assume nullable properties are undefined.
+          // This prevents self-referencing polymorphic types from creating corrupted mocks.
+          return `${keyDefinition}: undefined`;
         }
 
         return `${keyDefinition}: ${resolvedValue.value}`;
