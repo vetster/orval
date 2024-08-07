@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { defineConfig } from 'orval';
+import { defineConfig } from '@vetster/orval';
 
 export default defineConfig({
   petstore: {

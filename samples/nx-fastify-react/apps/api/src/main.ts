@@ -2,7 +2,7 @@
 // Require the framework and instantiate it
 import { faker } from '@faker-js/faker';
 import fastify from 'fastify';
-import orval from 'orval';
+import orval from '@vetster/orval';
 
 const app = fastify();
 

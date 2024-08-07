@@ -53,7 +53,7 @@ module.exports = {
 ### orval.config.ts
 
 ```ts
-import { defineConfig } from 'orval';
+import { defineConfig } from '@vetster/orval';
 
 export default defineConfig({
   petstore: {

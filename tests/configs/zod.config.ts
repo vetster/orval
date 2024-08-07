@@ -1,4 +1,4 @@
-import { defineConfig } from 'orval';
+import { defineConfig } from '@vetster/orval';
 
 export default defineConfig({
   basic: {

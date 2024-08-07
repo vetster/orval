@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { generate } from 'orval';
+import { generate } from '@vetster/orval';
 import prettier from 'prettier';
 import yaml from 'yaml';
 

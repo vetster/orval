@@ -6,7 +6,7 @@ import pkg from '../../package.json';
 import { normalizeOptions } from '../utils/options';
 import { startWatcher } from '../utils/watcher';
 
-const cli = cac('orval');
+const cli = cac('@vetster/orval');
 
 startMessage({
   name: pkg.name,
