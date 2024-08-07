@@ -64,6 +64,10 @@ export default defineConfig({
           useQuery: true,
           useInfinite: true,
           useInfiniteQueryParam: 'limit',
+          customOptions: {
+            queryHookSuffix: 'query',
+            queryKeySuffix: '-query',
+          },
         },
       },
     },
