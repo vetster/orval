@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "generate": "run-p generate:*",
-    "@vetster/orval": "node ../packages/orval/dist/bin/orval.js",
+    "orval": "node ../packages/orval/dist/bin/orval.js",
     "generate:cli": "yarn orval --input ./specifications/petstore.yaml --output ./generated/cli/petstore/endpoints.ts",
     "generate:default": "yarn orval --config ./configs/default.config.ts",
     "generate:axios": "yarn orval --config ./configs/axios.config.ts",
