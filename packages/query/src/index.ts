@@ -1072,7 +1072,9 @@ ${hookOptions}
           ? `const customOptions = ${
               queryOptionsMutator.name
             }({...queryOptions, queryKey, queryFn}${
-              queryOptionsMutator.hasSecondArg ? `, { ${queryProperties} }` : ''
+              queryOptionsMutator.hasSecondArg
+                ? `, { infinite: ${type === QueryType.INFINITE}, ${queryProperties} }`
+                : ''
             }${
               queryOptionsMutator.hasThirdArg ? `, { url: \`${route}\` }` : ''
             });`
