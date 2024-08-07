@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240208.0",
-    "orval": "link:../../packages/orval/dist",
+    "@vetster/orval": "link:../../packages/orval/dist",
     "wrangler": "^3.25.0"
   }
 }
