@@ -15,6 +15,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "format:staged": "lint-staged",
+    "bump": "yarn version --no-commit-hooks --no-git-tag-version",
+    "version": "yarn workspaces run bump-to $npm_package_version",
     "prerelease": "yarn build && cd ./tests && yarn generate && yarn build",
     "release": "yarn pre-release && dotenv release-it && npm publish --workspaces && yarn postrelease",
     "postrelease": "yarn build && yarn update-samples",
