@@ -6,6 +6,10 @@
   "workspaces": [
     "packages/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vetster/orval.git"
+  },
   "private": true,
   "scripts": {
     "format": "prettier --write .",
