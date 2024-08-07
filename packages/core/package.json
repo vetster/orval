@@ -1,5 +1,5 @@
 {
-  "name": "@orval/core",
+  "name": "@vetster/orval-core",
   "version": "6.28.2",
   "license": "MIT",
   "main": "./dist/index.js",

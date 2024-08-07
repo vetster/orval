@@ -1,5 +1,5 @@
 {
-  "name": "@orval/query",
+  "name": "@vetster/orval-query",
   "version": "6.28.2",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -14,7 +14,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@orval/core": "6.28.2",
+    "@vetster/orval-core": "6.28.2",
     "lodash.omitby": "^4.6.0"
   },
   "devDependencies": {

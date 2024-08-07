@@ -1,5 +1,5 @@
 {
-  "name": "@orval/mock",
+  "name": "@vetster/orval-mock",
   "version": "6.28.2",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -13,7 +13,7 @@
     "lint": "eslint src/**/*.ts"
   },
   "dependencies": {
-    "@orval/core": "6.28.2",
+    "@vetster/orval-core": "6.28.2",
     "lodash.get": "^4.4.2",
     "lodash.omit": "^4.5.0",
     "openapi3-ts": "^4.2.2"

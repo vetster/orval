@@ -1,5 +1,5 @@
 {
-  "name": "@orval/axios",
+  "name": "@vetster/orval-axios",
   "version": "6.28.2",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -13,6 +13,6 @@
     "lint": "eslint src/**/*.ts"
   },
   "dependencies": {
-    "@orval/core": "6.28.2"
+    "@vetster/orval-core": "6.28.2"
   }
 }

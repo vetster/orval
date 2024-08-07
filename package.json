@@ -1,6 +1,6 @@
 {
-  "name": "orval-workspaces",
-  "namespace": "@orval",
+  "name": "@vetster/orval",
+  "namespace": "@vetster/orval",
   "version": "6.28.2",
   "license": "MIT",
   "workspaces": [
