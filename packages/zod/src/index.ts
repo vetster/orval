@@ -22,7 +22,7 @@ import {
   jsStringEscape,
   getNumberWord,
   pascal,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import uniq from 'lodash.uniq';
 
 const ZOD_DEPENDENCIES: GeneratorDependency[] = [
@@ -161,8 +161,8 @@ const generateZodValidationSchemaDefinition = (
         const separator = schema.allOf
           ? 'allOf'
           : schema.oneOf
-          ? 'oneOf'
-          : 'anyOf';
+            ? 'oneOf'
+            : 'anyOf';
 
         const schemas = (schema.allOf ?? schema.oneOf ?? schema.anyOf) as (
           | SchemaObject

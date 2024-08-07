@@ -29,8 +29,8 @@ import {
   RefComponentSuffix,
   SwaggerParserOptions,
   upath,
-} from '@orval/core';
-import { DEFAULT_MOCK_OPTIONS } from '@orval/mock';
+} from '@vetster/orval-core';
+import { DEFAULT_MOCK_OPTIONS } from '@vetster/orval-mock';
 import chalk from 'chalk';
 import { InfoObject } from 'openapi3-ts/oas30';
 import pkg from '../../package.json';

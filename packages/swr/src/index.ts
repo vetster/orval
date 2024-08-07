@@ -26,7 +26,7 @@ import {
   VERBS_WITH_BODY,
   jsDoc,
   SwrOptions,
-} from '@orval/core';
+} from '@vetster/orval-core';
 
 const AXIOS_DEPENDENCIES: GeneratorDependency[] = [
   {

@@ -9,7 +9,7 @@ import {
   isObject,
   pascal,
   ResReqTypesValue,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import { getRouteMSW, overrideVarName } from '../faker/getters';
 import { getMockDefinition, getMockOptionsDataOverride } from './mocks';
 import { getDelay } from '../delay';

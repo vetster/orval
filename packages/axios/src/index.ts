@@ -18,7 +18,7 @@ import {
   sanitize,
   toObjectString,
   VERBS_WITH_BODY,
-} from '@orval/core';
+} from '@vetster/orval-core';
 
 const AXIOS_DEPENDENCIES: GeneratorDependency[] = [
   {

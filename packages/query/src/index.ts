@@ -35,7 +35,7 @@ import {
   compareVersions,
   getRouteAsArray,
   NormalizedOutputOptions,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import omitBy from 'lodash.omitby';
 import {
   normalizeQueryOptions,

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { isString, logError, startMessage } from '@orval/core';
+import { isString, logError, startMessage } from '@vetster/orval-core';
 import { cac } from 'cac';
 import { generateConfig, generateSpec } from '../generate';
 import pkg from '../../package.json';

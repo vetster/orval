@@ -14,7 +14,7 @@ import {
   writeSplitTagsMode,
   writeTagsMode,
   getMockFileExtensionByTypeName,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import chalk from 'chalk';
 import execa from 'execa';
 import fs from 'fs-extra';

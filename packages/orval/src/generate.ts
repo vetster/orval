@@ -12,7 +12,7 @@ import {
   NormalizedOptions,
   NormalizedConfig,
   removeFiles,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import { importSpecs } from './import-specs';
 import { normalizeOptions } from './utils/options';
 import { startWatcher } from './utils/watcher';

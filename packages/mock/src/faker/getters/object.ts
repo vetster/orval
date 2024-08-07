@@ -5,7 +5,7 @@ import {
   isBoolean,
   isReference,
   MockOptions,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import { ReferenceObject, SchemaObject } from 'openapi3-ts/oas30';
 import { resolveMockValue } from '../resolvers/value';
 import { MockDefinition, MockSchemaObject } from '../../types';

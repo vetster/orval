@@ -1,4 +1,7 @@
-import { GlobalMockOptions, NormalizedOverrideOutput } from '@orval/core';
+import {
+  GlobalMockOptions,
+  NormalizedOverrideOutput,
+} from '@vetster/orval-core';
 
 export const getDelay = (
   override?: NormalizedOverrideOutput,

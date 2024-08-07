@@ -1,4 +1,4 @@
-import { GeneratorImport } from '@orval/core';
+import { GeneratorImport } from '@vetster/orval-core';
 import { SchemaObject } from 'openapi3-ts/oas30';
 
 export interface MockDefinition {

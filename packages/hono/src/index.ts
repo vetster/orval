@@ -16,10 +16,10 @@ import {
   GeneratorImport,
   getOrvalGeneratedTypes,
   jsDoc,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import { getRoute } from './route';
 import fs from 'fs-extra';
-import { generateZod } from '@orval/zod';
+import { generateZod } from '@vetster/orval-zod';
 import { InfoObject } from 'openapi3-ts/oas30';
 
 const HONO_DEPENDENCIES: GeneratorDependency[] = [
@@ -143,7 +143,7 @@ ${
       ? `zValidator('response', ${verbOption.operationName}Response),\n`
       : ''
   }(c: ${contextTypeName}) => {
-  
+
   },
 );`;
 };
