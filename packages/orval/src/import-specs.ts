@@ -7,7 +7,7 @@ import {
   upath,
   SwaggerParserOptions,
   WriteSpecsBuilder,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import chalk from 'chalk';
 import yaml from 'js-yaml';
 import fs from 'fs-extra';

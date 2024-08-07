@@ -1,5 +1,5 @@
 {
-  "name": "@orval/hono",
+  "name": "@vetster/orval-hono",
   "version": "6.28.2",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -7,14 +7,18 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vetster/orval.git"
+  },
   "scripts": {
     "build": "tsup ./src/index.ts --target node12 --clean --dts --sourcemap",
     "dev": "tsup ./src/index.ts --target node12 --clean --watch --sourcemap src",
     "lint": "eslint src/**/*.ts"
   },
   "dependencies": {
-    "@orval/core": "6.28.2",
-    "@orval/zod": "6.28.2",
+    "@vetster/orval-core": "6.28.2",
+    "@vetster/orval-zod": "6.28.2",
     "lodash.uniq": "^4.5.0"
   },
   "devDependencies": {

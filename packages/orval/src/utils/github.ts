@@ -1,5 +1,5 @@
 import SwaggerParser from '@apidevtools/swagger-parser';
-import { upath } from '@orval/core';
+import { upath } from '@vetster/orval-core';
 import { prompt } from 'enquirer';
 import fs from 'fs-extra';
 import https from 'https';

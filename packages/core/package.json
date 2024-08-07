@@ -1,5 +1,5 @@
 {
-  "name": "@orval/core",
+  "name": "@vetster/orval-core",
   "version": "6.28.2",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -7,6 +7,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vetster/orval.git"
+  },
   "scripts": {
     "build": "tsup ./src/index.ts --clean --sourcemap --dts",
     "dev": "tsup ./src/index.ts --clean --sourcemap --watch src --dts",

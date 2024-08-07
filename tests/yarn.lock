@@ -144,6 +144,10 @@
   resolved "https://registry.yarnpkg.com/@types/statuses/-/statuses-2.0.3.tgz#9286ef63c99ed9fd739db7f7db5ab9bd6160ab33"
   integrity sha512-NwCYScf83RIwCyi5/9cXocrJB//xrqMh5PMw3mYTSFGaI3DuVjBLfO/PCk7QVAC3Da8b9NjxNmTO9Aj9T3rl/Q==
 
+"@vetster/orval@link:../packages/orval/dist":
+  version "0.0.0"
+  uid ""
+
 "@vue/compiler-core@3.3.4":
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.3.4.tgz#7fbf591c1c19e1acd28ffd284526e98b4f581128"
@@ -917,10 +921,6 @@ ora@^5.4.1:
     log-symbols "^4.1.0"
     strip-ansi "^6.0.0"
     wcwidth "^1.0.1"
-
-"orval@link:../packages/orval/dist":
-  version "0.0.0"
-  uid ""
 
 os-tmpdir@~1.0.2:
   version "1.0.2"

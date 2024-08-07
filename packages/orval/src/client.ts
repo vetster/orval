@@ -1,5 +1,5 @@
-import angular from '@orval/angular';
-import axios from '@orval/axios';
+import angular from '@vetster/orval-angular';
+import axios from '@vetster/orval-axios';
 import {
   asyncReduce,
   ClientFileBuilder,
@@ -19,12 +19,12 @@ import {
   OutputClient,
   OutputClientFunc,
   pascal,
-} from '@orval/core';
-import * as mock from '@orval/mock';
-import query from '@orval/query';
-import swr from '@orval/swr';
-import zod from '@orval/zod';
-import hono from '@orval/hono';
+} from '@vetster/orval-core';
+import * as mock from '@vetster/orval-mock';
+import query from '@vetster/orval-query';
+import swr from '@vetster/orval-swr';
+import zod from '@vetster/orval-zod';
+import hono from '@vetster/orval-hono';
 
 const DEFAULT_CLIENT = OutputClient.AXIOS;
 

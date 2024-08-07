@@ -9,7 +9,7 @@ import {
   resolveRef,
   ResReqTypesValue,
   stringify,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import { OpenAPIObject, SchemaObject } from 'openapi3-ts/oas30';
 import { getMockScalar } from '../faker/getters';
 

@@ -1,18 +1,22 @@
 {
-  "name": "orval-workspaces",
-  "namespace": "@orval",
+  "name": "@vetster/orval",
+  "namespace": "@vetster/orval",
   "version": "6.28.2",
   "license": "MIT",
   "workspaces": [
     "packages/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vetster/orval.git"
+  },
   "private": true,
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "format:staged": "lint-staged",
     "prerelease": "yarn build && cd ./tests && yarn generate && yarn build",
-    "release": "dotenv release-it",
+    "release": "yarn pre-release && dotenv release-it && npm publish --workspaces && yarn postrelease",
     "postrelease": "yarn build && yarn update-samples",
     "prepare": "husky install && cd ./samples/react-query/basic && yarn",
     "commitlint": "commitlint",

@@ -1,11 +1,16 @@
 {
   "npm": false,
   "git": {
-    "commitMessage": "chore(release): ${version}"
+    "commitMessage": "chore(NA): v${version}",
+    "commit": true,
+    "tag": true,
+    "tagName": "v${version}",
+    "push": false
   },
   "github": {
     "release": true,
-    "draft": true
+    "draft": true,
+    "releaseName": "v${version}"
   },
   "plugins": {
     "@release-it/conventional-changelog": {

@@ -16,7 +16,7 @@ import {
   openApiConverter,
   upath,
   WriteSpecsBuilder,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import omit from 'lodash.omit';
 import { OpenAPIObject, SchemasObject } from 'openapi3-ts/oas30';
 import { getApiBuilder } from './api';

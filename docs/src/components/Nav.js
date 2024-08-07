@@ -10,7 +10,10 @@ export const Nav = () => (
           <Link href="/" as="/">
             <>
               <span className="sr-only">Home</span>
-              <img src="/images/orval-logo-horizontal.svg" alt="orval" />
+              <img
+                src="/images/orval-logo-horizontal.svg"
+                alt="@vetster/orval"
+              />
             </>
           </Link>
         </div>

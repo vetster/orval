@@ -11,7 +11,7 @@ import {
   upath,
   GetterProps,
   GetterPropType,
-} from '@orval/core';
+} from '@vetster/orval-core';
 import chalk from 'chalk';
 
 export const normalizeQueryOptions = (

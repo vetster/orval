@@ -11,8 +11,8 @@ import {
   NormalizedInputOptions,
   NormalizedOutputOptions,
   resolveRef,
-} from '@orval/core';
-import { generateMockImports } from '@orval/mock';
+} from '@vetster/orval-core';
+import { generateMockImports } from '@vetster/orval-mock';
 import { PathItemObject } from 'openapi3-ts/oas30';
 import {
   generateClientFooter,

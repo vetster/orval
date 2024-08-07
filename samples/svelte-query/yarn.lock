@@ -432,6 +432,10 @@
     "@typescript-eslint/types" "5.52.0"
     eslint-visitor-keys "^3.3.0"
 
+"@vetster/orval@link:../../packages/orval/dist":
+  version "0.0.0"
+  uid ""
+
 acorn-jsx@^5.3.2:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz#7ed5bb55908b3b2f1bc55c6af1653bada7f07937"
@@ -1505,10 +1509,6 @@ ora@^5.4.1:
     log-symbols "^4.1.0"
     strip-ansi "^6.0.0"
     wcwidth "^1.0.1"
-
-"orval@link:../../packages/orval/dist":
-  version "0.0.0"
-  uid ""
 
 os-tmpdir@~1.0.2:
   version "1.0.2"
