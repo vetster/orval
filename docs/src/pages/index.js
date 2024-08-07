@@ -18,7 +18,7 @@ const Home = (props) => {
   return (
     <>
       <Seo
-        title="orval"
+        title="@vetster/orval"
         description="orval is able to generate client with appropriate type-signatures (TypeScript) from any valid OpenAPI v3 or Swagger v2 specification, either in yaml or json formats. 🍺"
       />
       <Head>
