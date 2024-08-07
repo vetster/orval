@@ -397,6 +397,11 @@ export type HonoOptions = {
   handlers?: string;
 };
 
+export type CustomOptions = {
+  queryHookSuffix: string;
+  queryKeySuffix: string;
+};
+
 export type NormalizedQueryOptions = {
   useQuery?: boolean;
   useSuspenseQuery?: boolean;
@@ -406,6 +411,7 @@ export type NormalizedQueryOptions = {
   useInfiniteQueryParam?: string;
   usePrefetch?: boolean;
   options?: any;
+  customOptions?: CustomOptions;
   queryKey?: NormalizedMutator;
   queryOptions?: NormalizedMutator;
   mutationOptions?: NormalizedMutator;
@@ -423,6 +429,7 @@ export type QueryOptions = {
   useInfiniteQueryParam?: string;
   usePrefetch?: boolean;
   options?: any;
+  customOptions?: CustomOptions;
   queryKey?: Mutator;
   queryOptions?: Mutator;
   mutationOptions?: Mutator;
