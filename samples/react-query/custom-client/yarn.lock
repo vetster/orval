@@ -2684,6 +2684,10 @@
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
 
+"@vetster/orval@link:../../../packages/orval/dist":
+  version "0.0.0"
+  uid ""
+
 "@webassemblyjs/ast@1.11.6", "@webassemblyjs/ast@^1.11.5":
   version "1.11.6"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.11.6.tgz#db046555d3c413f8966ca50a95176a0e2c642e24"
@@ -7652,10 +7656,6 @@ ora@^5.4.1:
     log-symbols "^4.1.0"
     strip-ansi "^6.0.0"
     wcwidth "^1.0.1"
-
-"orval@link:../../../packages/orval/dist":
-  version "0.0.0"
-  uid ""
 
 os-tmpdir@~1.0.2:
   version "1.0.2"
