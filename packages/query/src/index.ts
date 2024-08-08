@@ -861,7 +861,7 @@ const generateQueryImplementation = ({
     options,
     type,
     customOptions,
-    shouldExportHooks = true,
+    shouldGenerateHooks = true,
   },
   operationName,
   queryKeyFnName,
@@ -891,7 +891,7 @@ const generateQueryImplementation = ({
     type: QueryType;
     queryParam?: string;
     customOptions?: CustomOptions;
-    shouldExportHooks?: boolean;
+    shouldGenerateHooks?: boolean;
   };
   isRequestOptions: boolean;
   operationName: string;
@@ -1131,7 +1131,7 @@ export type ${pascal(name)}QueryError = ${errorType}
   return `
 ${queryOptionsFn}
 
-${shouldExportHooks ? hook : ''}
+${shouldGenerateHooks ? hook : ''}
 
 ${
   usePrefetch && (type === QueryType.QUERY || type === QueryType.INFINITE)
@@ -1289,7 +1289,7 @@ const generateQueryHook = async (
               options: query?.options,
               customOptions: query?.customOptions,
               type: QueryType.QUERY,
-              shouldExportHooks: query?.shouldExportHooks,
+              shouldGenerateHooks: query?.shouldGenerateHooks,
             },
           ]
         : []),
