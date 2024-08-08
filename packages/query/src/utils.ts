@@ -50,9 +50,8 @@ export const normalizeQueryOptions = (
     ...(queryOptions.shouldExportMutatorHooks
       ? { shouldExportMutatorHooks: true }
       : {}),
-    ...(queryOptions.shouldGenerateHooks ? { shouldGenerateHooks: true } : {}),
-    ...(queryOptions.skipImplementationWithoutHooks
-      ? { skipImplementationWithoutHooks: true }
+    ...(queryOptions.shouldGeneratePrefetchOnly
+      ? { shouldGeneratePrefetchOnly: true }
       : {}),
     ...(queryOptions.signal ? { signal: true } : {}),
   };

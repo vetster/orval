@@ -513,14 +513,8 @@ const normalizeQueryOptions = (
     ...(!isUndefined(queryOptions.shouldExportMutatorHooks)
       ? { shouldExportMutatorHooks: queryOptions.shouldExportMutatorHooks }
       : {}),
-    ...(!isUndefined(queryOptions.shouldGenerateHooks)
-      ? { shouldGenerateHooks: queryOptions.shouldGenerateHooks }
-      : {}),
-    ...(!isUndefined(queryOptions.skipImplementationWithoutHooks)
-      ? {
-          skipImplementationWithoutHooks:
-            queryOptions.skipImplementationWithoutHooks,
-        }
+    ...(!isUndefined(queryOptions.shouldGeneratePrefetchOnly)
+      ? { shouldGeneratePrefetchOnly: queryOptions.shouldGeneratePrefetchOnly }
       : {}),
     ...(!isUndefined(queryOptions.signal)
       ? { signal: queryOptions.signal }

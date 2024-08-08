@@ -861,7 +861,7 @@ const generateQueryImplementation = ({
     options,
     type,
     customOptions,
-    shouldGenerateHooks = true,
+    shouldGeneratePrefetchOnly,
   },
   operationName,
   queryKeyFnName,
@@ -891,7 +891,7 @@ const generateQueryImplementation = ({
     type: QueryType;
     queryParam?: string;
     customOptions?: CustomOptions;
-    shouldGenerateHooks?: boolean;
+    shouldGeneratePrefetchOnly?: boolean;
   };
   isRequestOptions: boolean;
   operationName: string;
@@ -1131,7 +1131,7 @@ export type ${pascal(name)}QueryError = ${errorType}
   return `
 ${queryOptionsFn}
 
-${shouldGenerateHooks ? hook : ''}
+${!shouldGeneratePrefetchOnly ? hook : ''}
 
 ${
   usePrefetch && (type === QueryType.QUERY || type === QueryType.INFINITE)
@@ -1289,7 +1289,7 @@ const generateQueryHook = async (
               options: query?.options,
               customOptions: query?.customOptions,
               type: QueryType.QUERY,
-              shouldGenerateHooks: query?.shouldGenerateHooks,
+              shouldGeneratePrefetchOnly: query?.shouldGeneratePrefetchOnly,
             },
           ]
         : []),
@@ -1589,7 +1589,7 @@ export const generateQuery: ClientBuilder = async (
   const implementation = `${functionImplementation}\n\n${hookImplementation}`;
 
   return {
-    implementation: options?.override?.query?.skipImplementationWithoutHooks
+    implementation: options?.override?.query?.shouldGeneratePrefetchOnly
       ? hookImplementation
         ? implementation
         : ''

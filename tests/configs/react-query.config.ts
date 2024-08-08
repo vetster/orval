@@ -24,8 +24,7 @@ export default defineConfig({
         query: {
           usePrefetch: true,
           useMutation: false,
-          shouldGenerateHooks: false,
-          skipImplementationWithoutHooks: true,
+          shouldGeneratePrefetchOnly: true,
         },
       },
     },
