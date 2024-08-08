@@ -13,6 +13,25 @@ export default defineConfig({
       target: '../specifications/petstore.yaml',
     },
   },
+  basicPrefetch: {
+    output: {
+      target: '../generated/react-query/basic-prefetch/endpoints.ts',
+      schemas: '../generated/react-query/basic-prefetch/model',
+      client: 'react-query',
+      mock: true,
+      headers: true,
+      override: {
+        query: {
+          usePrefetch: true,
+          useMutation: false,
+          shouldGeneratePrefetchOnly: true,
+        },
+      },
+    },
+    input: {
+      target: '../specifications/petstore.yaml',
+    },
+  },
   petstoreTagsSplit: {
     output: {
       target: '../generated/react-query/petstore-tags-split/endpoints.ts',
