@@ -419,6 +419,7 @@ export type NormalizedQueryOptions = {
   mutationOptions?: NormalizedMutator;
   shouldExportMutatorHooks?: boolean;
   shouldGenerateHooks?: boolean;
+  skipImplementationWithoutHooks?: boolean;
   signal?: boolean;
   version?: 3 | 4 | 5;
 };
@@ -438,6 +439,7 @@ export type QueryOptions = {
   mutationOptions?: Mutator;
   shouldExportMutatorHooks?: boolean;
   shouldGenerateHooks?: boolean;
+  skipImplementationWithoutHooks?: boolean;
   signal?: boolean;
   version?: 3 | 4 | 5;
 };

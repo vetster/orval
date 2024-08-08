@@ -1586,8 +1586,14 @@ export const generateQuery: ClientBuilder = async (
   const { implementation: hookImplementation, mutators } =
     await generateQueryHook(verbOptions, options, outputClient);
 
+  const implementation = `${functionImplementation}\n\n${hookImplementation}`;
+
   return {
-    implementation: `${functionImplementation}\n\n${hookImplementation}`,
+    implementation: options?.override?.query?.skipImplementationWithoutHooks
+      ? hookImplementation
+        ? implementation
+        : ''
+      : implementation,
     imports,
     mutators,
   };

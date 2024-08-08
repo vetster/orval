@@ -51,6 +51,9 @@ export const normalizeQueryOptions = (
       ? { shouldExportMutatorHooks: true }
       : {}),
     ...(queryOptions.shouldGenerateHooks ? { shouldGenerateHooks: true } : {}),
+    ...(queryOptions.skipImplementationWithoutHooks
+      ? { skipImplementationWithoutHooks: true }
+      : {}),
     ...(queryOptions.signal ? { signal: true } : {}),
   };
 };

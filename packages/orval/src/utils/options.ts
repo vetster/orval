@@ -516,6 +516,12 @@ const normalizeQueryOptions = (
     ...(!isUndefined(queryOptions.shouldGenerateHooks)
       ? { shouldGenerateHooks: queryOptions.shouldGenerateHooks }
       : {}),
+    ...(!isUndefined(queryOptions.skipImplementationWithoutHooks)
+      ? {
+          skipImplementationWithoutHooks:
+            queryOptions.skipImplementationWithoutHooks,
+        }
+      : {}),
     ...(!isUndefined(queryOptions.signal)
       ? { signal: queryOptions.signal }
       : {}),
