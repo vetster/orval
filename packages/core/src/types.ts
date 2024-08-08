@@ -245,6 +245,8 @@ export type GlobalMockOptions = {
   baseUrl?: string;
   // This is used to set the locale of the faker library
   locale?: keyof typeof allLocales;
+  // This is used to add extra import dependencies to the generated mock file
+  dependencies?: GeneratorDependency[];
 };
 
 export type OverrideMockOptions = Partial<GlobalMockOptions> & {

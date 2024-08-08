@@ -39,7 +39,11 @@ export const generateMSWImports: GenerateMockImports = ({
 }) => {
   return generateDependencyImports(
     implementation,
-    [...getMSWDependencies(options?.locale), ...imports],
+    [
+      ...getMSWDependencies(options?.locale),
+      ...(options?.dependencies || []),
+      ...imports,
+    ],
     specsName,
     hasSchemaDir,
     isAllowSyntheticDefaultImports,
