@@ -74,6 +74,7 @@ export type NormalizedOverrideOutput = {
   tags: { [key: string]: NormalizedOperationOptions };
   mock?: OverrideMockOptions;
   contentType?: OverrideOutputContentType;
+  addUseClientDirective?: boolean;
   header: false | ((info: InfoObject) => string[] | string);
   formData: boolean | NormalizedMutator;
   formUrlEncoded: boolean | NormalizedMutator;
@@ -313,6 +314,7 @@ export type OverrideOutput = {
   tags?: { [key: string]: OperationOptions };
   mock?: OverrideMockOptions;
   contentType?: OverrideOutputContentType;
+  addUseClientDirective?: boolean;
   header?: boolean | ((info: InfoObject) => string[] | string);
   formData?: boolean | Mutator;
   formUrlEncoded?: boolean | Mutator;

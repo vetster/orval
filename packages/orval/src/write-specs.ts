@@ -57,7 +57,9 @@ export const writeSpecs = async (
     {} as Record<keyof typeof schemas, string>,
   );
 
-  const header = getHeader(output.override.header, info as InfoObject);
+  const header =
+    (output.override.addUseClientDirective ? "'use client'" + '\n\n' : '') +
+    getHeader(output.override.header, info as InfoObject);
 
   if (output.schemas) {
     const rootSchemaPath = output.schemas;

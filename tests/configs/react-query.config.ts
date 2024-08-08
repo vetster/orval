@@ -8,6 +8,9 @@ export default defineConfig({
       client: 'react-query',
       mock: true,
       headers: true,
+      override: {
+        addUseClientDirective: true,
+      },
     },
     input: {
       target: '../specifications/petstore.yaml',

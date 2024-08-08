@@ -188,6 +188,7 @@ export const normalizeOptions = async (
             : isFunction(outputOptions.override?.header)
               ? outputOptions.override?.header!
               : getDefaultFilesHeader,
+        addUseClientDirective: !!outputOptions.override?.addUseClientDirective,
         requestOptions: outputOptions.override?.requestOptions ?? true,
         components: {
           schemas: {
