@@ -57,9 +57,7 @@ export const writeSpecs = async (
     {} as Record<keyof typeof schemas, string>,
   );
 
-  const header =
-    (output.override.addUseClientDirective ? "'use client'" + '\n\n' : '') +
-    getHeader(output.override.header, info as InfoObject);
+  const header = getHeader(output.override.header, info as InfoObject);
 
   if (output.schemas) {
     const rootSchemaPath = output.schemas;
@@ -93,7 +91,9 @@ export const writeSpecs = async (
       workspace,
       output,
       specsName,
-      header,
+      header:
+        (output.override.addUseClientDirective ? "'use client'" + '\n\n' : '') +
+        header,
       needSchema: !output.schemas && output.client !== 'zod',
     });
   }
