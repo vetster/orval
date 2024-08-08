@@ -1,0 +1,44 @@
+#!/bin/sh
+
+cd packages
+for dir in $(ls -d */); do
+  echo Switching to $dir
+  cd $dir
+  package_json=$(cat package.json)
+
+  update_dependency_version() {
+    local dependency=$1
+    # Extract package name (e.g., @vetster/orval-query to query or @vetster/orval to orval)
+    if [[ $dependency == *@vetster/orval-* ]]; then
+      package_name=$(echo $dependency | sed 's/@vetster\/orval-//')
+    else
+      package_name=$(echo $dependency | sed 's/@vetster\///')
+    fi
+    # Read version from the corresponding package's package.json
+    version=$(cat ../$package_name/package.json | jq -r '.version')
+    if [[ $version != "null" ]]; then
+      echo Updating $dependency to $version
+      jq ".$2.\"$dependency\" = \"$version\"" package.json > tmp.json && mv tmp.json package.json
+    fi
+  }
+
+  if [[ $package_json == *"dependencies"* ]]; then
+    dependencies=$(echo $package_json | jq -r '.dependencies | keys[]')
+    for dependency in $dependencies; do
+      if [[ $dependency == "@vetster"* ]]; then
+        update_dependency_version $dependency "dependencies"
+      fi
+    done
+  fi
+
+  if [[ $package_json == *"devDependencies"* ]]; then
+    devDependencies=$(echo $package_json | jq -r '.devDependencies | keys[]')
+    for dependency in $devDependencies; do
+      if [[ $dependency == "@vetster"* ]]; then
+        update_dependency_version $dependency "devDependencies"
+      fi
+    done
+  fi
+
+  cd ..
+done
