@@ -15,7 +15,8 @@
     "build": "tsup ./src/index.ts --clean --sourcemap --dts",
     "dev": "tsup ./src/index.ts --clean --sourcemap --watch src --dts",
     "lint": "eslint src/**/*.ts",
-    "test": "vitest --global test.ts"
+    "test": "vitest --global test.ts",
+    "bump-to": "yarn version --no-commit-hooks --no-git-tag-version --new-version"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.0",
